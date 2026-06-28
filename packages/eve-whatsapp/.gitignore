@@ -1,0 +1,8 @@
+node_modules
+dist
+*.tsbuildinfo
+.DS_Store
+
+# Secrets for the opt-in e2e test — never commit. .env.example is tracked.
+.env*
+!.env.example

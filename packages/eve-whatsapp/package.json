@@ -1,0 +1,42 @@
+{
+  "name": "@chore-o-matic/eve-whatsapp",
+  "version": "0.1.0",
+  "description": "WhatsApp Cloud API (Meta Graph) channel for eve agents.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "eve",
+    "whatsapp",
+    "channel",
+    "meta",
+    "graph-api",
+    "agent"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test",
+    "test:e2e": "npm run build && node --env-file-if-exists=.env.local --test e2e/whatsapp.e2e.mjs",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "eve": "^0.16.0"
+  },
+  "devDependencies": {
+    "eve": "^0.16.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
